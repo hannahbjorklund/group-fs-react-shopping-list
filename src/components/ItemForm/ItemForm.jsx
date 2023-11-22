@@ -6,8 +6,6 @@ function ItemForm(){
     let [itemQuantity, setItemQuantity] = useState(0);
     let [itemUnit, setItemUnit] = useState('');
 
-   
-
     return(
         <>
             <h2>Add an Item</h2>
@@ -30,7 +28,7 @@ function ItemForm(){
                 value={itemUnit}
                 onChange={(evt) => setItemUnit(evt.target.value)}
                 />
-                <button> Save </button>
+                <button className="save-btn"> Save </button>
             </form>
         </>
     )

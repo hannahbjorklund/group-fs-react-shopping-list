@@ -1,0 +1,15 @@
+.shopping-list {
+    background-color: aliceblue;
+}
+
+.clear-btn{
+    margin-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.reset-btn{
+    margin-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
