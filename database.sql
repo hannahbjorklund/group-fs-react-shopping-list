@@ -4,7 +4,8 @@ CREATE TABLE shoppingList (
     "id" SERIAL PRIMARY KEY,
     "name" VARCHAR(80),
     "quantity" FLOAT,
-    "unit" VARCHAR(20)
+    "unit" VARCHAR(20),
+    "isPurchased" BOOLEAN DEFAULT false
 )
 
 INSERT INTO shoppingList ("name", "quantity", "unit")

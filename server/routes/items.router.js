@@ -40,4 +40,19 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+    const sqlQueryText = `DELETE FROM "shoppinglist";`
+
+    pool.query(sqlQueryText)
+    .then((result) => {
+        console.log("Cleared entire shopping list");
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log("ERROR in delete at /items:", error);
+        res.sendStatus(500);
+    })
+})
+
+
+
 module.exports = router;

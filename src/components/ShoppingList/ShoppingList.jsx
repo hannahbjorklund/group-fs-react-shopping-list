@@ -1,13 +1,13 @@
 import './ShoppingList.css'
 import Item from '../Item/Item.jsx'
 
-function ShoppingList({items}){
+function ShoppingList({items, clearItems}){
 
     return(
         <section className="shopping-list">
             <h2>Shopping List</h2>
             <button className="reset-btn">Reset</button>
-            <button className="clear-btn">Clear</button>
+            <button className="clear-btn" onClick={clearItems}>Clear</button>
             <div>
                 {items.map((item) => (
                     <Item key={item.id} item={item}/>

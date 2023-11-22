@@ -24,12 +24,25 @@ function App() {
       })
     }
 
+    const clearItems = () => {
+      axios({
+        method: 'DELETE',
+        url: '/items',
+        data: 'clearAll'
+      }).then((response) => {
+        console.log("Got a DELETE request at /items to CLEAR ALL");
+        getItems();
+      }).catch((error) => {
+        console.log("ERROR clearing list:", error);
+      })
+    }
+
     return (
         <div className="App">
             <Header />
             <main>
                 <ItemForm getItems={getItems}/>
-                <ShoppingList items={itemArray}/>
+                <ShoppingList items={itemArray} clearItems={clearItems}/>
             </main>
         </div>
     );
