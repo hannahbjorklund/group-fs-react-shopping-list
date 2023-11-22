@@ -28,7 +28,7 @@ function App() {
         <div className="App">
             <Header />
             <main>
-                <ItemForm />
+                <ItemForm getItems={getItems}/>
                 <ShoppingList items={itemArray}/>
             </main>
         </div>

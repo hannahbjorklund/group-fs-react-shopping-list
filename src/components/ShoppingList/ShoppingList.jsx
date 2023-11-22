@@ -1,4 +1,5 @@
 import './ShoppingList.css'
+import Item from '../Item/Item.jsx'
 
 function ShoppingList({items}){
 
@@ -8,7 +9,9 @@ function ShoppingList({items}){
             <button className="reset-btn">Reset</button>
             <button className="clear-btn">Clear</button>
             <div>
-                {/* This is where the items will go */}
+                {items.map((item) => (
+                    <Item key={item.id} item={item}/>
+                ))}
             </div>
         </section>
     )

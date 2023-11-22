@@ -20,4 +20,24 @@ router.get('/', (req, res) => {
     
 })
 
+router.post('/', (req, res) => {
+    console.log("Got a POST request at /items");
+    let item = req.body;
+
+    const sqlQueryText = `
+    INSERT INTO "shoppinglist" ("name", "quantity", "unit")
+        VALUES ($1, $2, $3);`;
+    
+    const sqlValues = [item.name, item.quantity, item.unit];
+
+    pool.query(sqlQueryText, sqlValues)
+    .then((result) => {
+        console.log("Success! PUT a new item");
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log("Oh naur! Couldn't PUT new item:", error);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;
