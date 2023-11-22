@@ -1,7 +1,7 @@
 import './ShoppingList.css'
 import Item from '../Item/Item.jsx'
 
-function ShoppingList({items, clearItems}){
+function ShoppingList({items, clearItems, getItems}){
 
     return(
         <section className="shopping-list">
@@ -10,7 +10,7 @@ function ShoppingList({items, clearItems}){
             <button className="clear-btn" onClick={clearItems}>Clear</button>
             <div>
                 {items.map((item) => (
-                    <Item key={item.id} item={item}/>
+                    <Item key={item.id} item={item} getItems={getItems}/>
                 ))}
             </div>
         </section>

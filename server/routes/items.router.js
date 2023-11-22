@@ -53,6 +53,21 @@ router.delete('/', (req, res) => {
     })
 })
 
+router.put('/:id', (req, res) => {
+    const sqlQueryText = `
+    UPDATE "shoppinglist"
+        SET "isPurchased" = NOT "isPurchased"
+        WHERE "id" = $1;`;
+    
+    const sqlValues = [req.params.id];
 
+    pool.query(sqlQueryText, sqlValues)
+    .then((result) => {
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log("Error in PUT:", error);
+        res.sendStatus(500);
+    })
+})
 
 module.exports = router;

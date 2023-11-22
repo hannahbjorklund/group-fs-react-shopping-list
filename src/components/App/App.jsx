@@ -42,7 +42,7 @@ function App() {
             <Header />
             <main>
                 <ItemForm getItems={getItems}/>
-                <ShoppingList items={itemArray} clearItems={clearItems}/>
+                <ShoppingList items={itemArray} clearItems={clearItems} getItems={getItems}/>
             </main>
         </div>
     );
